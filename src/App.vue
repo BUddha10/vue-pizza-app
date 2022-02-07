@@ -3,6 +3,7 @@
     <app-header />
     <app-featured />
     <app-menu />
+    <app-call-us />
     <app-footer />
   </div>
 </template>
@@ -12,6 +13,7 @@ import AppHeader from "@/components/Header.vue";
 import AppFooter from "@/components/Footer.vue";
 import AppFeatured from "@/components/Featured/Index.vue";
 import AppMenu from "@/components/Menu.vue";
+import AppCallUs from "@/components/CallUs/Index.vue";
 export default {
   name: "App",
   components: {
@@ -19,6 +21,7 @@ export default {
     AppFooter,
     AppFeatured,
     AppMenu,
+    AppCallUs,
   },
 };
 </script>

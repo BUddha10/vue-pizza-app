@@ -1,4 +1,5 @@
 <template>
+<!-- eslint-disable prettier/prettier -->
   <div class="container menu_container">
     <div class="top" v-scroll-reveal.reset>
       <h2>Menu</h2>
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+/* eslint-disable prettier/prettier */
 import burger_chicken from "./../assets/images/products/burger_chicken.png";
 export default {
   name: "Menu",
