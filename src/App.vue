@@ -1,3 +1,17 @@
 <template>
-  <h1>hello world</h1>
+  <app-header />
 </template>
+
+<script>
+import AppHeader from "@/components/Header.vue";
+export default {
+  name: "App",
+  components: {
+    AppHeader,
+  },
+};
+</script>
+
+<style>
+@import "./assets/style.css";
+</style>
