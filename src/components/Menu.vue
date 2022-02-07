@@ -13,10 +13,28 @@
         {{ button.name }}
       </md-button>
     </div>
+    <div class="products_items">
+      <md-card
+        v-for="(product, i) in products"
+        :key="i"
+        v-show="product.type === activeProduct"
+      >
+        <md-card-media md-ratio="16:9">
+          <img :src="product.img" />
+        </md-card-media>
+        <md-card-header>
+          <div class="md-title">{{ product.name }}</div>
+          <div class="md-subhead">${{ product.cost }}</div>
+        </md-card-header>
+        <md-card-content>{{ product.detail }}</md-card-content>
+      </md-card>
+    </div>
+    <h1>{{ products.name }}</h1>
   </div>
 </template>
 
 <script>
+import burger_chicken from "./../assets/images/products/burger_chicken.png";
 export default {
   name: "Menu",
   data() {
@@ -39,6 +57,89 @@ export default {
           active: false,
         },
       ],
+      products: [
+        {
+          name: "burger_chicken",
+          type: "pizza",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "burger",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "salat",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "pizza",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "pizza",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "dessert",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "burger",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "pizza",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "salat",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+        {
+          name: "burger_chicken",
+          type: "burger",
+          img: burger_chicken,
+          cost: 20,
+          detail:
+            "Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.",
+        },
+      ],
+      activeProduct: "pizza",
     };
   },
   methods: {
@@ -46,6 +147,7 @@ export default {
       this.buttons.forEach((item) => {
         if (item.name === value) {
           item.active = true;
+          this.activeProduct = value;
         } else {
           item.active = false;
         }
@@ -54,3 +156,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.md-card {
+  width: 32%;
+  margin-bottom: 20px;
+}
+
+.products_items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+</style>
