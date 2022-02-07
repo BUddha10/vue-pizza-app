@@ -5,8 +5,10 @@
         <img :src="logoIcon" />
       </div>
       <div class="nav">
-        <img :src="menuIcon" />
+        <img :src="menuIcon" @click.prevent="openDrawer = !openDrawer" />
       </div>
+
+      <md-drawer :md-active.sync="openDrawer" :md-right="true" />
     </div>
   </header>
 </template>
@@ -20,6 +22,7 @@ export default {
     return {
       logoIcon: Logo,
       menuIcon: Menu,
+      openDrawer: false,
     };
   },
 };
