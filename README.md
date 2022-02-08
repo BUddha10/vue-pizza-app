@@ -1,4 +1,4 @@
-# pizza-nepal
+# vue-pizza-app
 
 ## Project setup
 ```
